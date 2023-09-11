@@ -1,37 +1,37 @@
 -dontobfuscate
--keep class com.github.olga_yakovleva.rhvoice.RHVoiceException
+-keep class com.unicef.cboard.MCD.RHVoiceException
 {
 <init>(...);
 }
--keep class com.github.olga_yakovleva.rhvoice.LanguageInfo
-{
-<init>(...);
-<methods>;
-}
--keep class com.github.olga_yakovleva.rhvoice.VoiceInfo
+-keep class com.unicef.cboard.MCD.LanguageInfo
 {
 <init>(...);
 <methods>;
 }
--keep class com.github.olga_yakovleva.rhvoice.SynthesisParameters
+-keep class com.unicef.cboard.MCD.VoiceInfo
+{
+<init>(...);
+<methods>;
+}
+-keep class com.unicef.cboard.MCD.SynthesisParameters
 {
 <methods>;
 }
--keep class com.github.olga_yakovleva.rhvoice.LogLevel
+-keep class com.unicef.cboard.MCD.LogLevel
 {
 <init>(...);
 <methods>;
 <fields>;
 }
--keep class com.github.olga_yakovleva.rhvoice.** implements com.github.olga_yakovleva.rhvoice.Logger
+-keep class com.unicef.cboard.MCD.** implements com.unicef.cboard.MCD.Logger
 {
 <methods>;
 }
--keep class com.github.olga_yakovleva.rhvoice.** implements com.github.olga_yakovleva.rhvoice.TTSClient
+-keep class com.unicef.cboard.MCD.** implements com.unicef.cboard.MCD.TTSClient
 {
 <methods>;
 }
--keep class com.github.olga_yakovleva.rhvoice.TTSEngine
+-keep class com.unicef.cboard.MCD.TTSEngine
 {
 <methods>;
 <fields>;
