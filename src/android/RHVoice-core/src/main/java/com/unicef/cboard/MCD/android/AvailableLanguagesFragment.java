@@ -22,20 +22,22 @@ import android.os.Bundle;
 import androidx.fragment.app.ListFragment;
 import androidx.appcompat.app.ActionBar;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.google.common.collect.Ordering;
 
+
 public final class AvailableLanguagesFragment extends ListFragment {
     private ArrayAdapter<VoiceAccent> accents;
     private DataManager dm;
+    private final String TAG = "RHVoice.AvailableLanguages";
 
     public interface Listener {
         public void onAccentSelected(VoiceAccent accent);
     }
-
     @Override
     public void onActivityCreated(Bundle state) {
         super.onActivityCreated(state);
@@ -63,8 +65,7 @@ public final class AvailableLanguagesFragment extends ListFragment {
         dm.setPackageDirectory(dir);
         accents.setNotifyOnChange(false);
         accents.clear();
-        accents.addAll(dm.getAccents());
-        accents.sort(Ordering.usingToString());
+        accents.addAll(dm.getLanguageById("macedonian").getAccents());
         accents.notifyDataSetChanged();
     }
 }

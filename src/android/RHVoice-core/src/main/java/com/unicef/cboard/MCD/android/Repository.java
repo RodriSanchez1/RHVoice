@@ -75,7 +75,7 @@ final class Repository {
         moshi = new Moshi.Builder().build();
         jsonAdapter = moshi.adapter(PackageDirectory.class).nonNull();
         exec = MoreExecutors.listeningDecorator(Executors.newSingleThreadExecutor());
-	exec.submit(this::initCerts);
+	    exec.submit(this::initCerts);
         initialLoad();
     }
 
