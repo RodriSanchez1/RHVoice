@@ -124,9 +124,9 @@ final class Repository {
     private void initialLoad() {
         try {
             {
-                String str = engine.getCachedPackageDir();
-                if (str == null)
-                    str = getPackageDirFromResources();
+                //String str = engine.getCachedPackageDir();
+                // if (str == null)
+                String  str = getPackageDirFromResources();
                 parse(str);
                 scheduleUpdates();
             }
@@ -137,9 +137,11 @@ final class Repository {
     }
 
     private boolean updateFromServer() {
-        if (BuildConfig.DEBUG)
-            Log.v(TAG, "Updating from server");
-        try {
+        if (BuildConfig.DEBUG) {
+            Log.v(TAG, "Avoid updating from server");
+        }
+        return false;
+        /*try {
             String str = engine.getPackageDirFromServer();
             if (BuildConfig.DEBUG && str != null)
                 Log.v(TAG, "Response:\n" + str);
@@ -152,7 +154,7 @@ final class Repository {
             if (BuildConfig.DEBUG)
                 Log.e(TAG, "Error on update from server", e);
         }
-        return false;
+        return false;*/
     }
 
     private boolean doCheck() {
