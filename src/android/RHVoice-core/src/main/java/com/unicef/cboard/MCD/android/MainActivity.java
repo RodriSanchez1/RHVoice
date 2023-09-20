@@ -31,13 +31,15 @@ public final class MainActivity extends AppCompatActivity implements AvailableLa
         dm = new DataManager();
         setContentView(R.layout.frame);
         Repository.get().getPackageDirectoryLiveData().observe(this, this::onPackageDirectory);
-        if (state == null)
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame, new AvailableLanguagesFragment(), "languages").add(new PlayerFragment(), "player").commit();
+        if (state == null){
+            getSupportFragmentManager().beginTransaction().add(new PlayerFragment(), "player").commit();
+        }
     }
 
     private void onPackageDirectory(PackageDirectory dir) {
         dm.setPackageDirectory(dir);
         dm.scheduleSync(this, false);
+        onAccentSelected(dm.getLanguageById("macedonian").getAccents().get(0));
     }
 
     public void onAccentSelected(VoiceAccent accent) {
@@ -47,7 +49,7 @@ public final class MainActivity extends AppCompatActivity implements AvailableLa
         args.putString(AvailableVoicesFragment.ARG_VARIANT, accent.getTag().variant);
         AvailableVoicesFragment frag = new AvailableVoicesFragment();
         frag.setArguments(args);
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame, frag, "voices").addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame, frag, "voices").commit();
     }
 
     public void onVoiceSelected(VoicePack voice, boolean state) {
