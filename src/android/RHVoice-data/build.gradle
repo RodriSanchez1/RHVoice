@@ -37,7 +37,7 @@ def getDataItemSpec(type, baseDir, dirName) {
     }
     spec["versionCode"] = 1000 * spec["format"] + 10 * spec["revision"]
     spec["versionName"] = "${spec['format']}.${spec['revision']}"
-    spec["package"] = "com.github.olga_yakovleva.rhvoice.android.${type}.${spec['id'].toLowerCase()}"
+    spec["package"] = "com.unicef.cboard.MCD.android.${type}.${spec['id'].toLowerCase()}"
     spec["flavor"] = type.equals("voice") ? "voice-${spec['language']}-${spec['file_name']}" : "language-${spec['file_name']}"
     spec["appName"] = type.equals("voice") ? "RHVoice ${spec['display_language']} ${spec['display_name']}" : "RHVoice ${spec['display_name']}"
     spec["task"] = "pack_${type}_${spec['id']}"
@@ -61,7 +61,7 @@ myData.each { spec ->
 android {
     compileSdk myCompileSdkVersion
     buildToolsVersion myBuildToolsVersion
-    namespace "com.github.olga_yakovleva.rhvoice.android"
+    namespace "com.unicef.cboard.MCD.android"
 
     defaultConfig {
         minSdk myMinSdkVersion

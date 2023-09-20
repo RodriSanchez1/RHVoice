@@ -56,14 +56,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class RHVoiceService extends TextToSpeechService implements LifecycleOwner {
-    public static final String KEY_PARAM_TEST_VOICE = "com.github.olga_yakovleva.rhvoice.android.param_test_voice";
+    public static final String KEY_PARAM_TEST_VOICE = "com.unicef.cboard.MCD.android.param_test_voice";
 
     private static final String TAG = "RHVoiceTTSService";
 
     private static final int[] languageSupportConstants = {TextToSpeech.LANG_NOT_SUPPORTED, TextToSpeech.LANG_AVAILABLE, TextToSpeech.LANG_COUNTRY_AVAILABLE, TextToSpeech.LANG_COUNTRY_VAR_AVAILABLE};
     private static final Pattern DEFAULT_VOICE_NAME_PATTERN = Pattern.compile("^([a-z]{3})-default$");
 
-    public static final String ACTION_CHECK_DATA = "com.github.olga_yakovleva.rhvoice.android.action.service_check_data";
+    public static final String ACTION_CHECK_DATA = "com.unicef.cboard.MCD.android.action.service_check_data";
     public static final String ACTION_CONFIG_CHANGE = "org.rhvoice.action.CONFIG_CHANGE";
     private final BroadcastReceiver dataStateReceiver = new BroadcastReceiver() {
         @Override
