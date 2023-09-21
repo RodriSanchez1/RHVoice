@@ -22,9 +22,9 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.work.WorkerParameters;
 
 public class DataSyncWorker extends DataWorker implements IDataSyncCallback {
-    public static final String ACTION_VOICE_DOWNLOADED = "com.unicef.cboard.MCD.android.action.voice_downloaded";
-    public static final String ACTION_VOICE_INSTALLED = "com.unicef.cboard.MCD.action.voice_installed";
-    public static final String ACTION_VOICE_REMOVED = "com.unicef.cboard.MCD.android.action.voice_removed";
+    public static final String ACTION_VOICE_DOWNLOADED = "com.unicef.cboard.MKD.android.action.voice_downloaded";
+    public static final String ACTION_VOICE_INSTALLED = "com.unicef.cboard.MKD.action.voice_installed";
+    public static final String ACTION_VOICE_REMOVED = "com.unicef.cboard.MKD.android.action.voice_removed";
     public static final String ACTION_LANGUAGE_INSTALLED = "org.rhvoice.action.voice_installed";
     public static final String ACTION_LANGUAGE_REMOVED = "org.rhvoice.action.voice_removed";
 

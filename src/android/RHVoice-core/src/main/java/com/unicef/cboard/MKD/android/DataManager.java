@@ -35,7 +35,7 @@ import com.google.common.base.Optional;
 
 public final class DataManager {
     private static final String TAG = "RHVoice.DataManager";
-    public static final String WORK_PREFIX_STRING = "com.unicef.cboard.MCD.android";
+    public static final String WORK_PREFIX_STRING = "com.unicef.cboard.MKD.android";
     public static final String WORK_TAG = WORK_PREFIX_STRING + ".data";
     private PackageDirectory dir;
 

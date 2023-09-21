@@ -13,7 +13,7 @@
 /* You should have received a copy of the GNU Lesser General Public License */
 /* along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
-package com.unicef.cboard.MCD.android;
+package com.unicef.cboard.MKD.android;
 
 import android.text.method.LinkMovementMethod;
 import android.view.View;
