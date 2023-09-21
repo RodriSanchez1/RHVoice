@@ -361,7 +361,7 @@ namespace
     java_logger_wrapper(JNIEnv* env,jobject jimpl):
       jvm(0),
       jlogger(env->NewGlobalRef(jimpl)),
-      Logger_log_method(get_method(env,check(env,env->GetObjectClass(jimpl)),"log","(Ljava/lang/String;Lcom/unicef/cboard/MCD/LogLevel;Ljava/lang/String;)V"))
+      Logger_log_method(get_method(env,check(env,env->GetObjectClass(jimpl)),"log","(Ljava/lang/String;Lcom/unicef/cboard/MKD/LogLevel;Ljava/lang/String;)V"))
     {
       env->GetJavaVM(&jvm);
       check(env);
@@ -401,12 +401,12 @@ namespace
     catch(const std::exception& e) {env->ThrowNew(RHVoiceException_class,e.what());} \
   return retval;
 
-JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_onClassInit
+JNIEXPORT void JNICALL Java_com_unicef_cboard_MKD_TTSEngine_onClassInit
   (JNIEnv *env, jclass TTSEngine_class)
 {
   TRY
-    RHVoiceException_class=find_class(env,"com/unicef/cboard/MCD/RHVoiceException");
-  LanguageInfo_class=find_class(env,"com/unicef/cboard/MCD/LanguageInfo");
+    RHVoiceException_class=find_class(env,"com/unicef/cboard/MKD/RHVoiceException");
+  LanguageInfo_class=find_class(env,"com/unicef/cboard/MKD/LanguageInfo");
   LanguageInfo_constructor=get_default_constructor(env,LanguageInfo_class);
   LanguageInfo_setName_method=get_string_setter(env,LanguageInfo_class,"setName");
   LanguageInfo_setAlpha2Code_method=get_string_setter(env,LanguageInfo_class,"setAlpha2Code");
@@ -414,21 +414,21 @@ JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_onClassInit
   LanguageInfo_setAlpha2CountryCode_method=get_string_setter(env,LanguageInfo_class,"setAlpha2CountryCode");
   LanguageInfo_setAlpha3CountryCode_method=get_string_setter(env,LanguageInfo_class,"setAlpha3CountryCode");
   LanguageInfo_setPseudoEnglish_method=get_boolean_setter(env,LanguageInfo_class,"setPseudoEnglish");
-  VoiceInfo_class=find_class(env,"com/unicef/cboard/MCD/VoiceInfo");
+  VoiceInfo_class=find_class(env,"com/unicef/cboard/MKD/VoiceInfo");
   VoiceInfo_constructor=get_default_constructor(env,VoiceInfo_class);
   VoiceInfo_setName_method=get_string_setter(env,VoiceInfo_class,"setName");
   VoiceInfo_getName_method=get_string_getter(env,VoiceInfo_class,"getName");
-  VoiceInfo_setLanguage_method=get_method(env,VoiceInfo_class,"setLanguage","(Lcom/unicef/cboard/MCD/LanguageInfo;)V");
+  VoiceInfo_setLanguage_method=get_method(env,VoiceInfo_class,"setLanguage","(Lcom/unicef/cboard/MKD/LanguageInfo;)V");
   VoiceInfo_setId_method=get_string_setter(env,VoiceInfo_class,"setId");
-    SynthesisParameters_class=find_class(env,"com/unicef/cboard/MCD/SynthesisParameters");
+    SynthesisParameters_class=find_class(env,"com/unicef/cboard/MKD/SynthesisParameters");
     SynthesisParameters_getVoiceProfile_method=get_string_getter(env,SynthesisParameters_class,"getVoiceProfile");
     SynthesisParameters_getSSMLMode_method=get_method(env,SynthesisParameters_class,"getSSMLMode","()Z");
     SynthesisParameters_getRate_method=get_method(env,SynthesisParameters_class,"getRate","()D");
     SynthesisParameters_getPitch_method=get_method(env,SynthesisParameters_class,"getPitch","()D");
     SynthesisParameters_getVolume_method=get_method(env,SynthesisParameters_class,"getVolume","()D");
   data_field=get_field(env,TTSEngine_class,"data","J");
-    LogLevel_enum=find_class(env,"com/unicef/cboard/MCD/LogLevel");
-    const char* sig="Lcom/unicef/cboard/MCD/LogLevel;";
+    LogLevel_enum=find_class(env,"com/unicef/cboard/MKD/LogLevel");
+    const char* sig="Lcom/unicef/cboard/MKD/LogLevel;";
     log_level_map[RHVoice_log_level_trace]=get_static_field(env,LogLevel_enum,"TRACE",sig);
     log_level_map[RHVoice_log_level_debug]=get_static_field(env,LogLevel_enum,"DEBUG",sig);
     log_level_map[RHVoice_log_level_info]=get_static_field(env,LogLevel_enum,"INFO",sig);
@@ -437,7 +437,7 @@ JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_onClassInit
   CATCH1(env)
 }
 
-JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_onInit
+JNIEXPORT void JNICALL Java_com_unicef_cboard_MKD_TTSEngine_onInit
 (JNIEnv *env, jobject obj, jstring data_path, jstring config_path, jobjectArray resource_paths, jstring pkg_path, jobject logger)
 {
   TRY
@@ -469,7 +469,7 @@ JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_onInit
   CATCH1(env)
 }
 
-JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_onShutdown
+JNIEXPORT void JNICALL Java_com_unicef_cboard_MKD_TTSEngine_onShutdown
   (JNIEnv *env, jobject obj)
 {
   TRY
@@ -478,7 +478,7 @@ JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_onShutdown
   CATCH1(env)
 }
 
-JNIEXPORT jobjectArray JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doGetVoices
+JNIEXPORT jobjectArray JNICALL Java_com_unicef_cboard_MKD_TTSEngine_doGetVoices
   (JNIEnv *env, jobject obj)
 {
   TRY
@@ -522,7 +522,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doGetVoices
   CATCH2(env,0)
 }
 
-JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doSpeak
+JNIEXPORT void JNICALL Java_com_unicef_cboard_MKD_TTSEngine_doSpeak
   (JNIEnv *env, jobject self, jstring text, jobject synth_params, jobject tts_client)
 {
   TRY
@@ -530,7 +530,7 @@ JNIEXPORT void JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doSpeak
   CATCH1(env);
 }
 
-JNIEXPORT jboolean JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doConfigure
+JNIEXPORT jboolean JNICALL Java_com_unicef_cboard_MKD_TTSEngine_doConfigure
 (JNIEnv *env, jobject obj, jstring key, jstring value)
 {
   TRY
@@ -539,7 +539,7 @@ JNIEXPORT jboolean JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doConfigure
   CATCH2(env,false)
 }
 
-JNIEXPORT jstring JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doGetCachedPackageDir
+JNIEXPORT jstring JNICALL Java_com_unicef_cboard_MKD_TTSEngine_doGetCachedPackageDir
   (JNIEnv *env, jobject obj)
 {
   TRY
@@ -554,7 +554,7 @@ JNIEXPORT jstring JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doGetCachedPackag
   CATCH2(env,0)
 }
 
-JNIEXPORT jstring JNICALL Java_com_unicef_cboard_MCD_TTSEngine_doGetPackageDirFromServer
+JNIEXPORT jstring JNICALL Java_com_unicef_cboard_MKD_TTSEngine_doGetPackageDirFromServer
   (JNIEnv *env, jobject obj)
 {
   TRY

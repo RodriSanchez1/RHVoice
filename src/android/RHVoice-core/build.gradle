@@ -23,7 +23,7 @@ android {
     compileSdk myCompileSdkVersion
     buildToolsVersion myBuildToolsVersion
     ndkVersion myNdkVersion
-    namespace "com.unicef.cboard.MCD.android"
+    namespace "com.unicef.cboard.MKD.android"
 
     buildFeatures {
         prefab true
@@ -33,7 +33,7 @@ android {
         multiDexEnabled true
         minSdk myMinSdkVersion
         targetSdk myTargetSdkVersion
-        applicationId "com.unicef.cboard.MCD.android"
+        applicationId "com.unicef.cboard.MKD.android"
         versionName "${major_version}.${minor_version}.${revision_number}"
         archivesBaseName = "CboardMKDplugin-${major_version}.${minor_version}.${revision_number}"
         ndk {

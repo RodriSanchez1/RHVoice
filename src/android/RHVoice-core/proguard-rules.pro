@@ -1,37 +1,37 @@
 -dontobfuscate
--keep class com.unicef.cboard.MCD.RHVoiceException
+-keep class com.unicef.cboard.MKD.RHVoiceException
 {
 <init>(...);
 }
--keep class com.unicef.cboard.MCD.LanguageInfo
-{
-<init>(...);
-<methods>;
-}
--keep class com.unicef.cboard.MCD.VoiceInfo
+-keep class com.unicef.cboard.MKD.LanguageInfo
 {
 <init>(...);
 <methods>;
 }
--keep class com.unicef.cboard.MCD.SynthesisParameters
+-keep class com.unicef.cboard.MKD.VoiceInfo
+{
+<init>(...);
+<methods>;
+}
+-keep class com.unicef.cboard.MKD.SynthesisParameters
 {
 <methods>;
 }
--keep class com.unicef.cboard.MCD.LogLevel
+-keep class com.unicef.cboard.MKD.LogLevel
 {
 <init>(...);
 <methods>;
 <fields>;
 }
--keep class com.unicef.cboard.MCD.** implements com.unicef.cboard.MCD.Logger
+-keep class com.unicef.cboard.MKD.** implements com.unicef.cboard.MKD.Logger
 {
 <methods>;
 }
--keep class com.unicef.cboard.MCD.** implements com.unicef.cboard.MCD.TTSClient
+-keep class com.unicef.cboard.MKD.** implements com.unicef.cboard.MKD.TTSClient
 {
 <methods>;
 }
--keep class com.unicef.cboard.MCD.TTSEngine
+-keep class com.unicef.cboard.MKD.TTSEngine
 {
 <methods>;
 <fields>;
