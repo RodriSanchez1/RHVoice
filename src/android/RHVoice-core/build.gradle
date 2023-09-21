@@ -35,6 +35,7 @@ android {
         targetSdk myTargetSdkVersion
         applicationId "com.unicef.cboard.MCD.android"
         versionName "${major_version}.${minor_version}.${revision_number}"
+        archivesBaseName = "CboardMKDplugin-${major_version}.${minor_version}.${revision_number}"
         ndk {
             abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a', 'x86_64'
         }
