@@ -25,6 +25,19 @@
                     },
                     "dataUrl": "https://cboardgroupdiag483.blob.core.windows.net/cblob/RHVoice-voice-Macedonian-Kiko-v4.7.zip",
                     "dataMd5": "SFE+u7R4pWepHPKkU+UcsA=="
+                },
+                {
+                    "name": "Suze",
+                    "id": "mac_m2",
+                    "ctry2code": "MK",
+                    "ctry3code": "MKD",
+                    "demoUrl": "https://cboardgroupdiag483.blob.core.windows.net/cblob/demo_android_Suze.ogg",
+                    "version": {
+                        "major": 4,
+                        "minor": 1
+                    },
+                    "dataUrl": "https://cboardgroupdiag483.blob.core.windows.net/cblob/RHVoice-voice-Macedonian-Suze-v4.1.zip",
+                    "dataMd5": "McyMJxOSb3vhJsKCPa7o/g=="
                 }
             ]
         }
